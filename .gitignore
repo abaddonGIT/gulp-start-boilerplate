@@ -1,0 +1,5 @@
+# Created by .gitignore support plugin (hsz.mobi)
+img
+dist
+node_modules
+.idea
