@@ -3,10 +3,17 @@
  */
 (function (require) {
     "use strict";
-    var gulp = require('gulp');
-
-    var gulpLoadPlugins = require('gulp-load-plugins');
-    var plugins = gulpLoadPlugins();
+    var gulp = require('gulp'),
+        fs = require('fs'),
+        exec = require('child_process').exec,
+        projectPath = process.cwd(),
+        bowerFolder = "bower_components",
+        bowerJson = fs.readFileSync('bower.json', 'utf8'),
+        gulpLoadPlugins = require('gulp-load-plugins'),
+        mainBowerFiles = require('main-bower-files'),
+        del = require('del'),
+        Q = require('q'),
+        plugins = gulpLoadPlugins();
 
     /*
      *Оптимизация сериптов
@@ -15,7 +22,7 @@
         gulp.src("js/*.js")
             .pipe(plugins.jshint(".jshintrc"))
             .pipe(plugins.jshint.reporter("default"))
-            .pipe(plugins.concat("all.min.js"))
+            .pipe(plugins.concat("base.min.js"))
             .pipe(plugins.uglify())
             .pipe(gulp.dest("dist/js/"));
     });
@@ -34,12 +41,12 @@
     /*
      *Оптимизация изображений
      */
-    gulp.task("img", function () {
-        //Создание спрайтов
+    gulp.task("sp", function () {
         var sprite = gulp.src("img/sp/*.png")
             .pipe(plugins.spritesmith({
                 imgName: "sp.png",
                 cssName: "sp.less",
+                imgPath: "../img/sp.png",
                 cssFormat: "less",
                 padding: 5,
                 engineOpts: {
@@ -48,11 +55,17 @@
             }));
         sprite.img.pipe(gulp.dest('img/'));
         sprite.css.pipe(gulp.dest('css/'));
-        //Минификация изображений
+    });
+    /*
+     *Минификация изображений
+     */
+    gulp.task("imagemin", function () {
         gulp.src(['img/*.jpg', 'img/*.png', 'img/*.gif'])
             .pipe(plugins.cache(plugins.imagemin({optimizationLevel: 5, progressive: true, interlaced: true})))
             .pipe(gulp.dest("dist/img/"));
     });
+
+    gulp.task("img", ['sp', 'imagemin']);
     /*
      *Замена адресов и перенос файлов
      */
@@ -61,6 +74,52 @@
             .pipe(plugins.replace(/style.css/g, "style.min.css"))
             .pipe(plugins.replace(/base.js/g, "base.min.js"))
             .pipe(gulp.dest("dist/"));
+    });
+    /*
+     * Подрузка компонентов
+     */
+    gulp.task('bower', function () {
+        var defer = Q.defer();
+        exec('bower install', {cwd: projectPath}, function (err, stdout, stderr) {
+            var bowerArray = JSON.parse(bowerJson), sources = bowerArray['overrides'];
+            if (sources) {
+                var venderNames = Object.keys(sources), vendersCount = venderNames.length, targets = [];
+                var _copy = function (i) {
+                    if (i < targets.length) {
+                        var vender = targets[i];
+                        gulp.src(vender.from).pipe(gulp.dest(vender.where)).on('end', function () {
+                            i++;
+                            _copy(i);
+                        });
+                    } else {
+                        console.log("delite");
+                        del([bowerFolder]);
+                        defer.resolve();
+                    }
+                };
+
+                for (var i in sources) {
+                    var venderName = i;
+                    for (var j in sources[i]) {
+                        var where = j, ln = sources[i][j].length;
+                        while (ln--) {
+                            var target = sources[i][j][ln], from = bowerFolder + '/' + venderName + '/' + target;
+                            targets.push({
+                                from: from,
+                                where: where
+                            });
+                        }
+                    }
+                }
+
+                setTimeout(function () {
+                    _copy(0);
+                }, 50);
+            } else {
+                defer.reject("Отсутствует bower.json или секция overrides!");
+            }
+            return defer.promise;
+        });
     });
     /*
      * Наблюдатель

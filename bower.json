@@ -1,0 +1,29 @@
+{
+    "name": "newProjectBundle",
+    "version": "0.0.0",
+    "dependencies": {
+        "font-awesome": "latest",
+        "jquery": "*",
+        "fancybox": "^2.1.5",
+        "bootstrap": ">=3.3.2",
+        "normalize-css": ">=3.0.2"
+    },
+    "overrides": {
+        "jquery": {
+            "js/venders/jquery": ["dist/jquery.min.js"]
+        },
+        "fancybox": {
+            "js/venders/fancybox": ["source/jquery.fancybox.pack.js", "source/jquery.fancybox.css", "source/*.png", "source/*.gif"]
+        },
+        "bootstrap": {
+            "css/bootstrap": ["dist/css/bootstrap.css"]
+        },
+        "normalize-css": {
+            "css/normalize": ["normalize.css"]
+        },
+        "font-awesome": {
+            "css/font-awesome/css": ["css/*"],
+            "css/font-awesome/fonts": ["fonts/*"]
+        }
+    }
+}
