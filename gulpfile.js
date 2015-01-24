@@ -10,7 +10,6 @@
         bowerFolder = "bower_components",
         bowerJson = fs.readFileSync('bower.json', 'utf8'),
         gulpLoadPlugins = require('gulp-load-plugins'),
-        mainBowerFiles = require('main-bower-files'),
         del = require('del'),
         Q = require('q'),
         plugins = gulpLoadPlugins();
@@ -92,7 +91,6 @@
                             _copy(i);
                         });
                     } else {
-                        console.log("delite");
                         del([bowerFolder]);
                         defer.resolve();
                     }
