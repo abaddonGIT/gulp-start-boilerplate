@@ -68,11 +68,14 @@
     /*
      *Замена адресов и перенос файлов
      */
-    gulp.task("html", function () {
+    gulp.task("html", ['venders'], function () {
         gulp.src("*.html")
             .pipe(plugins.replace(/style.css/g, "style.min.css"))
             .pipe(plugins.replace(/base.js/g, "base.min.js"))
             .pipe(gulp.dest("dist/"));
+    });
+    gulp.task('venders', function () {
+        gulp.src("js/venders/**").pipe(gulp.dest("dist/js/venders"));
     });
     /*
      * Подрузка компонентов
