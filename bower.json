@@ -10,20 +10,20 @@
     },
     "overrides": {
         "jquery": {
-            "js/venders/jquery": ["dist/jquery.min.js"]
+            "src/js/venders/jquery": ["dist/jquery.min.js"]
         },
         "fancybox": {
-            "js/venders/fancybox": ["source/jquery.fancybox.pack.js", "source/jquery.fancybox.css", "source/*.png", "source/*.gif"]
+            "src/js/venders/fancybox": ["source/jquery.fancybox.pack.js", "source/jquery.fancybox.css", "source/*.png", "source/*.gif"]
         },
         "bootstrap": {
-            "css/bootstrap": ["dist/css/bootstrap.css"]
+            "src/css/bootstrap": ["dist/css/bootstrap.css"]
         },
         "normalize-css": {
-            "css/normalize": ["normalize.css"]
+            "src/css/normalize": ["normalize.css"]
         },
         "font-awesome": {
-            "css/font-awesome/css": ["css/*"],
-            "css/font-awesome/fonts": ["fonts/*"]
+            "src/css/font-awesome/css": ["css/*"],
+            "src/css/font-awesome/fonts": ["fonts/*"]
         }
     }
 }

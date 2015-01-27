@@ -10,3 +10,11 @@ css/style.css
 css/sp.less
 css/style.css
 css/*/*
+
+src/css/bootstrap
+src/css/font-awesome
+src/css/normalize
+src/css/sprites.less
+src/js/venders
+src/css/sprites.css
+src/images/sprites.png
