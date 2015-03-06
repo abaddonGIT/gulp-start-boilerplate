@@ -21,6 +21,7 @@
         "jpegtran-bin": ">=2.0.2",
         "jasmine-core": ">=2.1.3",
         "require-dir": "^0.1.0",
+        "browser-sync": "latest",
         "karma": ">=0.12.28",
         "karma-chrome-launcher": ">=0.1.7",
         "karma-jasmine": ">=0.3.3",

@@ -1,0 +1,143 @@
+/*base classes*/
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
+}
+
+.tcenter {
+  text-align: center;
+}
+
+.tleft {
+  text-align: left;
+}
+
+.tright {
+  text-align: right;
+}
+
+.justify {
+  text-align: justify;
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+.rel {
+  position: relative;
+}
+
+.abs {
+  position: absolute;
+}
+
+.fix {
+  position: fixed;
+}
+
+.clear {
+  &:before, &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    clear: both;
+  }
+}
+
+:-moz-placeholder {
+}
+
+::-webkit-input-placeholder {
+}
+
+:-ms-input-placeholder {
+}
+
+.rotation(@grad) {
+  transform: rotate(@grad);
+}
+
+.bradius(@radius) {
+  border-radius: @radius;
+}
+
+.shadow(@size, @color) {
+  box-shadow: 0 0 @size @color;
+}
+
+.shadowin(@size, @color) {
+  box-shadow: inset 0 0 @size @color;
+}
+
+.grad_horizontal(@startColor, @endColor) {
+  background-color: @endColor;
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=@startColor, endColorstr=@endColor);
+  background-image: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+  background-image: -webkit-linear-gradient(right center, @startColor, @endColor);
+  background-image: -moz-linear-gradient(right center, @startColor, @endColor);
+  background-image: -o-linear-gradient(left,  @startColor,  @endColor);
+  background-image: -khtml-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+  background-image: -ms-linear-gradient(left,  @startColor,  @endColor);
+}
+
+.grad_vertical(@startColor, @endColor) {
+  background-color: @endColor;
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=@startColor, endColorstr=@endColor);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+  background-image: -webkit-linear-gradient(@startColor, @endColor);
+  background-image: -moz-linear-gradient(@startColor, @endColor);
+  background-image: -o-linear-gradient(top,  @startColor,  @endColor);
+  background-image: -khtml-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+  background-image: -ms-linear-gradient(top,  @startColor,  @endColor);
+}
+
+.noselect {
+  user-select: none;
+}
+
+&.res {
+  .block;
+  width: 100%;
+  height: auto;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.4rem;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  &:hover, &:active {
+    outline: none;
+  }
+}
+
+* {
+  outline: none;
+  box-sizing: border-box;
+}

@@ -76,16 +76,6 @@ a:active {
   outline: none;
   box-sizing: border-box;
 }
-body {
-  background: #ffff00;
-}
-.wrapper {
-  text-align: center;
-}
-input[type="text"],
-[type="email"] {
-  background-color: #000;
-}
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   /* Styles */

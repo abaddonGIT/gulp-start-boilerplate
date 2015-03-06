@@ -8,4 +8,8 @@ var $ = require('jquery');
     var App = function () {
 
     };
+
+    w.onload = function () {
+
+    };
 }(window, document));

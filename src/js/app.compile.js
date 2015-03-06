@@ -9,6 +9,10 @@ var $ = require('jquery');
     var App = function () {
 
     };
+
+    w.onload = function () {
+
+    };
 }(window, document));
 
 },{"jquery":2}],2:[function(require,module,exports){

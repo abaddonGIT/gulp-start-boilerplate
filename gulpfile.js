@@ -5,11 +5,25 @@
     "use strict";
     var gulp = require('gulp');
     var requireDir = require('require-dir');
-    requireDir('./gulp/tasks', { recurse: true });
+    var browserSync = require('browser-sync');
+    var reload = browserSync.reload;
 
-    gulp.task('watch', function () {
+    requireDir('./gulp/tasks', {recurse: true});
+
+    gulp.task('browser-sync', function () {
+        browserSync({
+            server: {
+                baseDir: "./src/",
+                index: "htdocs/index.html"
+            },
+            browser: ["chrome"]
+        });
+    });
+
+    gulp.task('watch', ['browser-sync'], function () {
         gulp.watch('src/css/*.css', ['prefix']);
-        gulp.watch('src/js/*.js', ['browserify']);
+        gulp.watch('src/js/app.js', ['browserify', browserSync.reload]);
+        gulp.watch("src/htdocs/*.html").on("change", browserSync.reload);
     });
 
     gulp.task('production', ['sprites', 'imagemin', 'mincss', 'uglifyJs', 'html']);
