@@ -45,10 +45,7 @@
   clear: both;
 }
 .noselect {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .res {
   display: block;
@@ -59,7 +56,7 @@ html {
   font-size: 10px;
 }
 body {
-  font-size: 1.4rem;
+  font-size: 14px;
 }
 body,
 html {
@@ -75,16 +72,6 @@ a:active {
 * {
   outline: none;
   box-sizing: border-box;
-}
-body {
-  background: #ffff00;
-}
-.wrapper {
-  text-align: center;
-}
-input[type="text"],
-[type="email"] {
-  background-color: #000;
 }
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {

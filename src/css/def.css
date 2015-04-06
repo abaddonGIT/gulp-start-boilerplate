@@ -45,10 +45,7 @@
   clear: both;
 }
 .noselect {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .res {
   display: block;
@@ -59,7 +56,7 @@ html {
   font-size: 10px;
 }
 body {
-  font-size: 1.4rem;
+  font-size: 14px;
 }
 body,
 html {
