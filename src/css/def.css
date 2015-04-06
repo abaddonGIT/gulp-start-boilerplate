@@ -8,6 +8,12 @@
 .block {
   display: block;
 }
+.b-inline {
+  display: inline-block;
+}
+.inline {
+  display: inline;
+}
 .none {
   display: none;
 }
@@ -36,6 +42,18 @@
 }
 .fix {
   position: fixed;
+}
+.upper {
+  text-transform: uppercase;
+}
+.lower {
+  text-transform: lowercase;
+}
+.cross {
+  text-decoration: line-through;
+}
+.d-none {
+  text-decoration: none;
 }
 .clear:before,
 .clear:after {
