@@ -1,15 +1,18 @@
-/**
+/*!
  * Created by abaddon on 18.12.2014.
  */
 /*global window, document, console*/
-var $ = require('jquery');
-(function (w, d) {
+var jQuery = require('jQuery'),
+    dot = require('dot'),
+    TweenMax = require('gsap');
+
+(function (w, d, $) {
     "use strict";
-    var App = function () {
+    var $D = $(d), App = function () {
 
     };
+    
 
-    w.onload = function () {
-
-    };
-}(window, document));
+    $D.ready(function () {
+    });
+}(window, document, jQuery));
