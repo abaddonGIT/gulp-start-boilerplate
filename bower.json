@@ -5,7 +5,7 @@
         "font-awesome": "latest",
         "jquery": "*",
         "fancybox": "^2.1.5",
-        "bootstrap": ">=3.3.2",
+        "bootstrap-grid-css": "latest",
         "normalize-css": ">=3.0.2"
     },
     "overrides": {
@@ -15,8 +15,8 @@
         "fancybox": {
             "src/js/venders/fancybox": ["source/jquery.fancybox.pack.js", "source/jquery.fancybox.css", "source/*.png", "source/*.gif"]
         },
-        "bootstrap": {
-            "src/css/bootstrap": ["dist/css/bootstrap.css"]
+        "bootstrap-grid-css": {
+            "src/css/grid": ["grid.css"]
         },
         "normalize-css": {
             "src/css/normalize": ["normalize.css"]

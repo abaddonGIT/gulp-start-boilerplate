@@ -12,7 +12,7 @@ var jQuery = require('jQuery'),
     var $D = $(d), App = function () {
 
     };
-    
+
 
     $D.ready(function () {
     });
