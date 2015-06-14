@@ -1,8 +1,16 @@
 {
   "name": "gulpProject",
   "version": "1.0.0",
-  "email": "abaddongit@gmail.com",
-  "url": "https://github.com/abaddonGIT/blankGulpProject.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abaddonGIT/blankGulpProject.git"
+  },
+  "author": {
+    "name": "Abaddon65",
+    "email": "abaddongit@gmail.com",
+    "url": "https://github.com/abaddonGIT"
+  },
+  "license": "MIT",
   "devDependencies": {
     "gulp": "latest",
     "gulp-concat": "latest",
@@ -15,6 +23,8 @@
     "gulp-filesize": "latest",
     "gulp-load-plugins": "latest",
     "gulp-changed": "latest",
+    "node-notifier": "latest",
+    "gulp-util": "latest",
     "vinyl-source-stream": "latest",
     "browserify": "latest",
     "browserify-shim": "latest",
@@ -28,7 +38,6 @@
     "karma-jasmine": ">=0.3.3",
     "del": ">=1.1.1",
     "dot": "latest",
-    "wow": "latest",
     "gsap": "latest"
   },
   "browser": {

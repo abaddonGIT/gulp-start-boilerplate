@@ -1,29 +1,48 @@
 {
-    "name": "newProjectBundle",
-    "version": "0.0.0",
-    "dependencies": {
-        "font-awesome": "latest",
-        "jquery": "*",
-        "fancybox": "^2.1.5",
-        "bootstrap-grid-css": "latest",
-        "normalize-css": ">=3.0.2"
+  "name": "newProjectBundle",
+  "version": "0.0.0",
+  "dependencies": {
+    "font-awesome": "latest",
+    "jquery": "*",
+    "fancybox": "^2.1.5",
+    "bootstrap-grid-css": "latest",
+    "normalize-css": ">=3.0.2",
+    "wow": "latest",
+    "animate.css": "latest"
+  },
+  "overrides": {
+    "jquery": {
+      "src/js/venders/jquery": ["dist/jquery.min.js"]
     },
-    "overrides": {
-        "jquery": {
-            "src/js/venders/jquery": ["dist/jquery.min.js"]
-        },
-        "fancybox": {
-            "src/js/venders/fancybox": ["source/jquery.fancybox.pack.js", "source/jquery.fancybox.css", "source/*.png", "source/*.gif"]
-        },
-        "bootstrap-grid-css": {
-            "src/css/grid": ["grid.css"]
-        },
-        "normalize-css": {
-            "src/css/normalize": ["normalize.css"]
-        },
-        "font-awesome": {
-            "src/css/font-awesome/css": ["css/*"],
-            "src/css/font-awesome/fonts": ["fonts/*"]
-        }
+    "fancybox": {
+      "src/js/venders/fancybox": [
+        "source/jquery.fancybox.pack.js",
+        "source/jquery.fancybox.css",
+        "source/*.png",
+        "source/*.gif"
+      ]
+    },
+    "bootstrap-grid-css": {
+      "src/css/grid": ["grid.css"]
+    },
+    "normalize-css": {
+      "src/css/normalize": ["normalize.css"]
+    },
+    "font-awesome": {
+      "src/css/font-awesome/css": ["css/*"],
+      "src/css/font-awesome/fonts": ["fonts/*"]
+    },
+    "animate.css": {
+      "src/css/animate": [
+        "animate.css",
+        "animate.min.css"
+      ]
+    },
+    "wow": {
+      "src/js/venders/wow": [
+        "dist/wow.js",
+        "dist/wow.min.js"
+      ]
     }
+  }
 }

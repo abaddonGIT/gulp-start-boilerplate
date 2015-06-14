@@ -4,11 +4,12 @@
 var gulp = require('gulp'),
     browserify = require('browserify'),
     config = require('../config').browserify,
+    error = require('../errors.js'),
     source = require('vinyl-source-stream');
 
 gulp.task("browserify", function () {
     return browserify(config.src)
-        .bundle()
+        .bundle().on('error', error.browserifyErrors)
         .pipe(source(config.compileName))
         .pipe(gulp.dest(config.dest));
 });
