@@ -8,9 +8,20 @@
     "bootstrap-grid-css": "latest",
     "normalize-css": ">=3.0.2",
     "wow": "latest",
-    "animate.css": "latest"
+    "animate.css": "latest",
+    "fetch": "latest",
+    "es6-promise": "latest"
   },
   "overrides": {
+    "fetch": {
+      "src/js/venders/fetch": ["fetch.js"]
+    },
+    "es6-promise": {
+      "src/js/venders/promise": [
+        "promise.min.js",
+        "promise.js"
+      ]
+    },
     "jquery": {
       "src/js/venders/jquery": ["dist/jquery.min.js"]
     },
