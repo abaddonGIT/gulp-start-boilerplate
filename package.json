@@ -38,7 +38,9 @@
     "karma-jasmine": ">=0.3.3",
     "del": ">=1.1.1",
     "dot": "latest",
-    "gsap": "latest"
+    "gsap": "latest",
+    "merge": "latest",
+    "classie": "latest"
   },
   "browser": {
     "jQuery": "./src/js/venders/jquery/jquery.min.js"
