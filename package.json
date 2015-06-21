@@ -39,11 +39,16 @@
     "del": ">=1.1.1",
     "dot": "latest",
     "gsap": "latest",
-    "merge": "latest",
+    "keymirror": "latest",
+    "object-assign": "latest",
+    "babelify": "latest",
     "classie": "latest"
   },
   "browser": {
     "jQuery": "./src/js/venders/jquery/jquery.min.js"
+  },
+  "browserify": {
+    "transform": ["babelify"]
   },
   "browserify-shim": {
     "jQuery": "global:$"
