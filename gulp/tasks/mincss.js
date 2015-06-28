@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 
 gulp.task('mincss', ['prefix'], function () {
     return gulp.src(config.src)
-        .pipe(mincss({keepBreaks: true}))
+        .pipe(mincss({keepBreaks: true, keepSpecialComments: '*'}))
         .on('error', error.standartError)
         .pipe(gulp.dest(config.dest))
         .pipe(size());

@@ -1,5 +1,5 @@
 /*!
- * Created by abaddon on 18.12.2014.
+ * Created by Abaddon (abaddongit@gmail.com)
  */
 /*global window, document, console*/
 var jQuery = require('jQuery'),

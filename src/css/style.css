@@ -1,6 +1,6 @@
 /*!
-* Created by abaddon (abaddongit@gmail.com)
-*/
+ * Created by Abaddon (abaddongit@gmail.com)
+ */
 /*base classes*/
 .left {
   float: left;
@@ -66,10 +66,7 @@
   clear: both;
 }
 .noselect {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .res {
   display: block;
