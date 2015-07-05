@@ -9,4 +9,5 @@ gulp.task("html", function () {
         .pipe(gulp.dest(config.dest));
 
     gulp.src(config.vendorsSrc).pipe(gulp.dest(config.vendorsDest));
+    gulp.src(config.fontsSrc).pipe(gulp.dest(config.fontsDest));
 });

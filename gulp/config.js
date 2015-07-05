@@ -34,13 +34,15 @@ module.exports = {
         compileName: 'app.compile.js'
     },
     uglify: {
-        src: src + '/js/*.js',
+        src: src + '/js/app.compile.js',
         dest: dest + '/js'
     },
     html: {
         src: src + '/htdocs/*.html',
         dest: dest + '/htdocs',
         vendorsSrc: src + '/js/venders/**',
-        vendorsDest: dest + '/js/venders'
+        vendorsDest: dest + '/js/venders',
+        fontsSrc: src + '/fonts/**',
+        fontsDest: dest + '/fonts'
     }
 };
