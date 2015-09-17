@@ -44,5 +44,12 @@ module.exports = {
         vendorsDest: dest + '/js/venders',
         fontsSrc: src + '/fonts/**',
         fontsDest: dest + '/fonts'
+    },
+    sftp: {
+        dest: dest + "/**",
+        host: '',
+        user: '',
+        pass: '',
+        remotePath: ''
     }
 };

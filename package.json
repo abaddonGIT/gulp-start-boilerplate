@@ -42,7 +42,8 @@
     "keymirror": "latest",
     "object-assign": "latest",
     "babelify": "latest",
-    "classie": "latest"
+    "classie": "latest",
+    "gulp-sftp": "latest"
   },
   "browser": {
     "jQuery": "./src/js/venders/jquery/jquery.min.js"
