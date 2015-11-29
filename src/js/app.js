@@ -4,21 +4,22 @@
 /*global window, document, console*/
 "use strict";
 
-class App {
-    constructor() {
-        this.w = window;
-        this.d = document;
-        this.$ = jQuery;
+(function (d, w) {
+    class App {
+        constructor() {
+
+        }
+
+        run() {
+            d.addEventListener("DOMContentLoaded", this._siteHandler, false);
+        }
+
+        _siteHandler() {
+            //Init animations
+            console.log("UJDYJ");
+        }
     }
 
-    run() {
-        this.$(this.d).ready(this._siteHandler.bind(this));
-    }
-
-    _siteHandler() {
-        //Init animations
-    }
-}
-
-var app = new App();
-app.run();
+    var app = new App();
+    app.run();
+}(document, window));

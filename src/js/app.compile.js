@@ -9,31 +9,30 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var App = (function () {
-    function App() {
-        _classCallCheck(this, App);
-
-        this.w = window;
-        this.d = document;
-        this.$ = jQuery;
-    }
-
-    _createClass(App, [{
-        key: "run",
-        value: function run() {
-            this.$(this.d).ready(this._siteHandler.bind(this));
+(function (d, w) {
+    var App = (function () {
+        function App() {
+            _classCallCheck(this, App);
         }
-    }, {
-        key: "_siteHandler",
-        value: function _siteHandler() {}
-    }]);
 
-    return App;
-})();
+        _createClass(App, [{
+            key: "run",
+            value: function run() {
+                d.addEventListener("DOMContentLoaded", this._siteHandler, false);
+            }
+        }, {
+            key: "_siteHandler",
+            value: function _siteHandler() {
+                //Init animations
+                console.log("UJDYJ");
+            }
+        }]);
 
-var app = new App();
-app.run();
+        return App;
+    })();
 
-//Init animations
+    var app = new App();
+    app.run();
+})(document, window);
 
 },{}]},{},[1]);
