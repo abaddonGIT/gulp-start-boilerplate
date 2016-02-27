@@ -21,7 +21,6 @@
     "gulp.spritesmith": "latest",
     "gulp-replace": "latest",
     "gulp-filesize": "latest",
-    "gulp-load-plugins": "latest",
     "gulp-changed": "latest",
     "node-notifier": "latest",
     "gulp-util": "latest",
@@ -33,11 +32,11 @@
     "require-dir": "^0.1.0",
     "browser-sync": "latest",
     "del": ">=1.1.1",
-    "gsap": "latest",
     "keymirror": "latest",
     "object-assign": "latest",
     "babelify": "latest",
     "babel-preset-es2015": "latest",
+    "babel-preset-stage-0": "latest",
     "classie": "latest",
     "gulp-sftp": "latest"
   },
@@ -48,7 +47,12 @@
     "transform": [
       [
         "babelify",
-        {"presets": ["es2015"]}
+        {
+          "presets": [
+            "es2015",
+            "stage-0"
+          ]
+        }
       ]
     ]
   },
