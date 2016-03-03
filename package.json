@@ -38,7 +38,12 @@
     "babel-preset-es2015": "latest",
     "babel-preset-stage-0": "latest",
     "classie": "latest",
-    "gulp-sftp": "latest"
+    "gulp-sftp": "latest",
+    "fs": "latest",
+    "gulp-file": "latest",
+    "gulp-ttf2eot": "latest",
+    "gulp-cssfont64": "latest",
+    "gulp-ttf2woff": "latest"
   },
   "browser": {
     "jQuery": "./src/js/venders/jquery/jquery.min.js"

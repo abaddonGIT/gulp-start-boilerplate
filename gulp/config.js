@@ -1,13 +1,13 @@
 /**
  * Created by abaddon on 27.01.2015.
  */
-var dest = './dist',
+var dist = './dist',
     src = './src';
 
 module.exports = {
     forImage: {
         src: src + '/images/**',
-        dest: dest + '/images'
+        dest: dist + '/images'
     },
     sprites: {
         src: src + '/sprites/*.png',
@@ -21,7 +21,7 @@ module.exports = {
     },
     cssmin: {
         src: src + '/css/*.css',
-        dest: dest + '/css'
+        dest: dist + '/css'
     },
     prefix: {
         src: src + '/css/*.css',
@@ -35,21 +35,26 @@ module.exports = {
     },
     uglify: {
         src: src + '/js/app.compile.js',
-        dest: dest + '/js'
+        dest: dist + '/js'
     },
     html: {
         src: src + '/htdocs/*.html',
-        dest: dest + '/htdocs',
+        dest: dist + '/htdocs',
         vendorsSrc: src + '/js/venders/**',
-        vendorsDest: dest + '/js/venders',
+        vendorsDest: dist + '/js/venders',
         fontsSrc: src + '/fonts/**',
-        fontsDest: dest + '/fonts'
+        fontsDest: dist + '/fonts'
     },
     sftp: {
-        dest: dest + "/**",
+        dest: dist + "/**",
         host: '',
         user: '',
         pass: '',
         remotePath: ''
+    },
+    fonts: {
+        src: src + "/fonts/*.ttf",
+        dist: src + "/fonts",
+        woff: src + "/fonts/*.woff"
     }
 };

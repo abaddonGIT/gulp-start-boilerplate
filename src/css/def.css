@@ -63,10 +63,7 @@
   clear: both;
 }
 .noselect {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .res {
   display: block;
@@ -93,4 +90,7 @@ a:active {
 * {
   outline: none;
   box-sizing: border-box;
+}
+.wow {
+  visibility: hidden;
 }

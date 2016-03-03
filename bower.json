@@ -10,11 +10,16 @@
     "wow": "latest",
     "animate.css": "latest",
     "fetch": "latest",
-    "es6-promise": "latest"
+    "es6-promise": "latest",
+    "ideal-image-slider": "~1.5.1",
+    "jquery.maskedinput": "~1.4.1",
+    "jquery-selectric": "~1.9.5"
   },
   "overrides": {
     "fetch": {
-      "src/js/venders/fetch": ["fetch.js"]
+      "src/js/venders/fetch": [
+        "fetch.js"
+      ]
     },
     "es6-promise": {
       "src/js/venders/promise": [
@@ -23,7 +28,9 @@
       ]
     },
     "jquery": {
-      "src/js/venders/jquery": ["dist/jquery.min.js"]
+      "src/js/venders/jquery": [
+        "dist/jquery.min.js"
+      ]
     },
     "fancybox": {
       "src/js/venders/fancybox": [
@@ -34,14 +41,22 @@
       ]
     },
     "bootstrap-grid-css": {
-      "src/css/grid": ["grid.css"]
+      "src/css/grid": [
+        "grid.css"
+      ]
     },
     "normalize-css": {
-      "src/css/normalize": ["normalize.css"]
+      "src/css/normalize": [
+        "normalize.css"
+      ]
     },
     "font-awesome": {
-      "src/css/font-awesome/css": ["css/*"],
-      "src/css/font-awesome/fonts": ["fonts/*"]
+      "src/css/font-awesome/css": [
+        "css/*"
+      ],
+      "src/css/font-awesome/fonts": [
+        "fonts/*"
+      ]
     },
     "animate.css": {
       "src/css/animate": [
@@ -53,6 +68,17 @@
       "src/js/venders/wow": [
         "dist/wow.js",
         "dist/wow.min.js"
+      ]
+    },
+    "jquery.maskedinput": {
+      "src/js/venders/mask": [
+        "dist/jquery.maskedinput.min.js"
+      ]
+    },
+    "jquery-selectric": {
+      "src/js/venders/selectric": [
+        "public/jquery.selectric.min.js",
+        "public/selectric.css"
       ]
     }
   }

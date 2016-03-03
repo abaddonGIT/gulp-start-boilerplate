@@ -19,3 +19,10 @@ src/css/sprites.less
 src/js/venders
 src/css/sprites.css
 src/images/sprites.png
+src/fonts/*.less
+src/fonts/*.css
+src/fonts/*.eot
+src/fonts/*.woff
+
+src/css/def.css
+src/css/style.css
