@@ -5,7 +5,5 @@
 "use strict";
 
 (function (d, w) {
-    $("img.lazy").lazyload({
-        effect: "fadeIn"
-    });
+
 }(document, window));

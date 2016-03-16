@@ -12,7 +12,9 @@
     "fetch": "latest",
     "es6-promise": "latest",
     "jquery.maskedinput": "~1.4.1",
-    "jquery-selectric": "~1.9.5"
+    "jquery-selectric": "~1.9.5",
+    "owl.carousel": "latest",
+    "jquery_lazyload": "latest"
   },
   "overrides": {
     "fetch": {
@@ -91,9 +93,9 @@
       ]
     },
     "jquery_lazyload": {
-        "src/js/venders/lazy": [
-          "./jquery.lazyload.js"
-        ]
+      "src/js/venders/lazy": [
+        "./jquery.lazyload.js"
+      ]
     }
   }
 }

@@ -44,7 +44,10 @@
     "gulp-ttf2eot": "latest",
     "gulp-cssfont64": "latest",
     "gulp-ttf2woff": "latest",
-    "gulp-svgstore": "latest"
+    "gulp-svgstore": "latest",
+    "gulp-svgmin": "latest",
+    "path": "latest",
+    "gulp-cheerio": "latest"
   },
   "browser": {
     "jQuery": "./src/js/venders/jquery/jquery.min.js"

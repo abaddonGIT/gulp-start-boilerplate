@@ -6,14 +6,7 @@ body
         header
         main
             |Привет мир!
+            include ../img/svg.svg
+            svg.icon.red
+                use(xlink:href="#pin")
     include ./footer.jade
-        link(rel="stylesheet", type="text/css", href="../css/style.css")
-        title
-    body
-        div.wrapper
-            header
-            main
-                | Привет мир.
-        footer
-            script(src="../js/venders/jquery/jquery.min.js")
-            script(src="../js/app.compile.js")

@@ -111,9 +111,9 @@ a:active {
 }
 .lazy {
   display: block;
-  max-width: 100%;
-  position: relative;
-  height: 700px;
+}
+.red {
+  fill: red;
 }
 /*------------------HEADER BLOCK------------------------*/
 /*------------------END HEADER BLOCK------------------------*/

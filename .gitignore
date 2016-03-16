@@ -10,6 +10,7 @@ css/style.css
 css/sp.less
 css/style.css
 css/*/*
+src/svg/*.svg
 
 src/css/grid
 src/css/bootstrap

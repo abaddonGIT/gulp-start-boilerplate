@@ -56,5 +56,9 @@ module.exports = {
         src: src + "/fonts/*.ttf",
         dist: src + "/fonts",
         woff: src + "/fonts/*.woff"
+    },
+    svg: {
+        src: src + "/svg/*.svg",
+        dist: src + "/img"
     }
 };
