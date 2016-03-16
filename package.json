@@ -43,7 +43,8 @@
     "gulp-file": "latest",
     "gulp-ttf2eot": "latest",
     "gulp-cssfont64": "latest",
-    "gulp-ttf2woff": "latest"
+    "gulp-ttf2woff": "latest",
+    "gulp-svgstore": "latest"
   },
   "browser": {
     "jQuery": "./src/js/venders/jquery/jquery.min.js"

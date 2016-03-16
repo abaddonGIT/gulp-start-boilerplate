@@ -23,6 +23,7 @@ src/fonts/*.less
 src/fonts/*.css
 src/fonts/*.eot
 src/fonts/*.woff
+src/htdocs/*.html
 
 src/css/def.css
 src/css/style.css
