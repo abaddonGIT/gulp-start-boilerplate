@@ -11,7 +11,6 @@
     "animate.css": "latest",
     "fetch": "latest",
     "es6-promise": "latest",
-    "ideal-image-slider": "~1.5.1",
     "jquery.maskedinput": "~1.4.1",
     "jquery-selectric": "~1.9.5"
   },
@@ -79,6 +78,16 @@
       "src/js/venders/selectric": [
         "public/jquery.selectric.min.js",
         "public/selectric.css"
+      ]
+    },
+    "owl.carousel": {
+      "src/js/venders/owl": [
+        "dist/owl.carousel.min.js",
+        "dist/owl.carousel.js",
+        "dist/assets/owl.carousel.css",
+        "dist/assets/owl.carousel.min.css",
+        "dist/assets/ajax-loader.gif",
+        "dist/assets/owl.video.play.png"
       ]
     },
     "jquery_lazyload": {
