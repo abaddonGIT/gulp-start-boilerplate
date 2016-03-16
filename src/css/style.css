@@ -66,7 +66,10 @@
   clear: both;
 }
 .noselect {
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .res {
   display: block;
@@ -105,6 +108,12 @@ a:active {
 }
 .white {
   color: #ffffff;
+}
+.lazy {
+  display: block;
+  max-width: 100%;
+  position: relative;
+  height: 700px;
 }
 /*------------------HEADER BLOCK------------------------*/
 /*------------------END HEADER BLOCK------------------------*/

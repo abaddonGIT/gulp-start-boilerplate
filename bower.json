@@ -80,6 +80,11 @@
         "public/jquery.selectric.min.js",
         "public/selectric.css"
       ]
+    },
+    "jquery_lazyload": {
+        "src/js/venders/lazy": [
+          "./jquery.lazyload.js"
+        ]
     }
   }
 }
