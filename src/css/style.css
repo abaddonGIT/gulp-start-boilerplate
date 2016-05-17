@@ -104,13 +104,26 @@ a:active {
 /*-------------------END SPRITE CLASS GENERATORS------------------*/
 /*---------------GENERATE COLOR CLASSES----------------*/
 .black {
-  color: #000000;
+  color: #000;
 }
 .white {
-  color: #ffffff;
+  color: #fff;
 }
 .lazy {
   display: block;
+}
+#badIE {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #673AB7;
+}
+#badIE h1 {
+  position: absolute;
+  text-align: center;
+  top: 48%;
+  width: 100%;
+  color: #fff;
 }
 /*------------------HEADER BLOCK------------------------*/
 /*------------------END HEADER BLOCK------------------------*/

@@ -3,13 +3,6 @@ img
 dist
 node_modules
 .idea
-css/sp.css
-css/style.css
-js/venders/
-css/style.css
-css/sp.less
-css/style.css
-css/*/*
 src/svg/*.svg
 
 src/css/grid
@@ -17,7 +10,7 @@ src/css/bootstrap
 src/css/font-awesome
 src/css/normalize
 src/css/sprites.less
-src/js/venders
+src/js/venders/**/
 src/css/sprites.css
 src/images/sprites.png
 src/fonts/*.less
