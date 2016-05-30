@@ -3,12 +3,12 @@
  */
 'use strict';
 
-var through = require('through2');
-var w3cjs = require('w3cjs');
-var gutil = require('gulp-util');
-var merge = require('object-assign');
-//var fs = require("fs");
-
+import through from 'through2';
+import w3cjs from 'w3cjs';
+import gutil from 'gulp-util';
+import merge from 'object-assign';
+import dot from 'dot';
+import tpl from './template-compiled';
 /**
  * Handles messages.
  *
@@ -17,7 +17,7 @@ var merge = require('object-assign');
  * @return boolean Return false if errors have occurred.
  */
 
-var TAG = "gulp-w3c-validate";
+const TAG = "gulp-w3c-validate";
 
 /**
  * Create and show console messages view
@@ -32,12 +32,22 @@ var showConsoleMessages = function (response, file) {
  * Create and view html messsages view
  * @param response
  */
-var showHtmlMessages = function (response, file) {
-    var content = file.contents.toString(), join = '</body>', validateText = "";
-    var htmlParts = content.split(join);
-    //console.log(htmlParts);
+var showHtmlMessages = function (response, content) {
+    let join = '</body>',
+        validateText = "",
+        htmlParts = content.split(join),
+        messages = response.messages,
+        msLen = messages.length;
+
     if (htmlParts.length > 1) {
-        validateText = "<!------------------VALIDATE---------------->EBA<!------------------VALIDATE---------------->";
+        validateText = "<!--VALIDATE-->";
+        //messages.extract = messages.extract.replace(/</g, "&lt;");
+        //messages.extract = messages.extract.replace(/>/g, "&gt;");
+        let items = dot.template(tpl.messageItems)(messages);
+        items = items.replace(/<!--/g, "");
+        items = items.replace(/-->/g, "");
+        //validateText += dot.template(tpl.messageWrap)(items);
+        validateText += "<!--VALIDATE-->";
     }
     htmlParts[0] += validateText;
 
@@ -78,12 +88,11 @@ var validate = function (params) {
         }
 
         if (params.view === "html") {
-            var w3cPart = content.split('<!------------------VALIDATE---------------->');
-            //console.log(w3cPart.length);
+            var w3cPart = content.split('<!--VALIDATE-->');
+
             if (w3cPart.length > 1) {
                 w3cPart.splice(1, 1);
-                console.log(w3cPart);
-                file.contents = prefixStream(w3cPart.join(""));
+                content = w3cPart.join("");
             }
         }
 
@@ -93,24 +102,12 @@ var validate = function (params) {
             callback: function (res) {
                 switch (params.view) {
                     case "html":
-                        file.contents = showHtmlMessages(res, file);
+                        file.contents = showHtmlMessages(res, content);
                         break;
                     case "console":
-                        showConsoleMessages(res, file);
+                        showConsoleMessages(res, content);
                         break;
                 }
-                //if (params.view === "page") {
-                //    var content = file.contents.toString(), join = '</footer>';
-                //    var code = content.split(join);
-                //    if (code[0].indexOf("w3cShow") == -1) {
-                //        if (code.length < 2) {
-                //            join = '</body>';
-                //        }
-                //        code = content.split(join);
-                //        code[0] += '<script src="' + __dirname + '\w3cShow.js"></script>';
-                //        file.contents = prefixStream(code.join(join));
-                //    }
-                //}
 
                 callback(null, file);
             }
@@ -118,4 +115,4 @@ var validate = function (params) {
     });
 };
 
-module.exports = validate;
+export default validate;
