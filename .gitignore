@@ -21,4 +21,5 @@ src/htdocs/*.html
 
 src/css/def.css
 src/css/style.css
-#src/plugins/**
+src/plugins/**
+*.-compiled.js
