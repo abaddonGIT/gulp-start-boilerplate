@@ -96,6 +96,12 @@
       "src/js/venders/lazy": [
         "./jquery.lazyload.js"
       ]
+    },
+    "hover": {
+      "src/css/hover":[
+        "./css/hover.css",
+        "./css/hover-min.css"
+      ]
     }
   }
 }

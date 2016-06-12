@@ -23,3 +23,6 @@ src/css/def.css
 src/css/style.css
 src/plugins/**
 *.-compiled.js
+src/css/hover/*
+src/css/animate/*
+src/css/animate/*

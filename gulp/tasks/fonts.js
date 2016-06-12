@@ -33,20 +33,16 @@ gulp.task('prepare', ['woff', 'eot'], function () {
 });
 
 gulp.task('fonts', ['prepare'], function () {
-    var code = "";
+    var code = "", code2 = "";
 
     function getFolders() {
         return fs.readdirSync('./src/fonts')
             .filter(function (file) {
                 var f = file.split(".");
-                if (f.indexOf("woff") !== -1) {
-
-                    code += '@font-face {' +
+                if (f.indexOf("ttf") !== -1) {
+                    code += '@import "../fonts/' + f[0] + '.css";';
+                    code2 += '.' + f[0].replace("-", "") + ' {' +
                         'font-family: "' + f[0] + '";' +
-                        'src: local("' + f[0] + '"), data-uri("../fonts/' + f[0] + '.' + f[1] + '") format("woff");' +
-                        '}' +
-                        '.' + f[0] + '{' +
-                        'font-family: ' + '"' + f[0] + '";' +
                         '}';
                 }
             });
@@ -54,5 +50,5 @@ gulp.task('fonts', ['prepare'], function () {
 
     getFolders();
 
-    return file('fonts.less', code).pipe(gulp.dest('./src/fonts'));
+    return file('fonts.less', code + code2).pipe(gulp.dest('./src/fonts'));
 });
