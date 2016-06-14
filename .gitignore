@@ -10,6 +10,7 @@ src/css/bootstrap
 src/css/font-awesome
 src/css/normalize
 src/css/sprites.less
+src/css/*.css
 src/js/venders/**/
 src/css/sprites.css
 src/images/sprites.png
@@ -19,7 +20,7 @@ src/fonts/*.eot
 src/fonts/*.woff
 src/htdocs/*.html
 
-src/css/def.css
+src/css/base.css
 src/css/style.css
 src/plugins/**
 *.-compiled.js

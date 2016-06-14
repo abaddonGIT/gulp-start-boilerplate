@@ -1,0 +1,113 @@
+.clearfix() {
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+/***********************************
+* Set sizes
+************************************/
+.size(@size) {
+  width: @size;
+  height: @size;
+}
+
+.size(@wdith, @height) {
+  width: @wdith;
+  height: @height;
+}
+
+/**********************************
+* Placeholder settings
+**********************************/
+.placeholder(@color: @default-input-placeholder-color) {
+  &:-moz-placeholder {
+    color: @color;
+  }
+  &::-moz-placeholder {
+    color: @color;
+  }
+  &::-webkit-input-placeholder {
+    color: @color;
+  }
+  &:-ms-input-placeholder {
+    color: @color;
+  }
+}
+
+/*********************************
+* Set value by round
+**********************************/
+.hand(@values, @prefix: ~"", @suffix: ~"", @sides: top right bottom left) {
+  @val: ~"@{values}";
+  @count: ~`'@{val}'.match(/(\S+)/g).length * 1`;
+  @val-0: ~`'@{val}'.match(/(\S+)/g)[0]`;
+  @val-1: ~`'@{val}'.match(/(\S+)/g)[1] || '@{val-0}'`;
+  @val-2: ~`'@{val}'.match(/(\S+)/g)[2] || '@{val-0}'`;
+  @val-3: ~`'@{val}'.match(/(\S+)/g)[3] || '@{val-1}' || '@{val-0}'`;
+  @pre: ~`'@{prefix}' ? '@{prefix}-' : ''`;
+  @suf: ~`'@{suffix}' ? '-@{suffix}' : ''`;
+
+  .output() when not (@val-0 = _) {
+    @side: extract(@sides, 1);
+      @{pre}@{side}@{suf}: @val-0;
+  }
+  .output() when not (@val-1 = _) {
+    @side: extract(@sides, 2);
+      @{pre}@{side}@{suf}: @val-1;
+  }
+  .output() when not (@val-2 = _) {
+    @side: extract(@sides, 3);
+      @{pre}@{side}@{suf}: @val-2;
+  }
+  .output() when not (@val-3 = _) {
+    @side: extract(@sides, 4);
+      @{pre}@{side}@{suf}: @val-3;
+  }
+
+  .output();
+}
+
+/***********************************
+* Block states
+***********************************/
+
+.absolute(...) {
+  position: absolute;
+  .hand(@arguments);
+}
+
+.fixed(...) {
+  position: fixed;
+  .hand(@arguments);
+}
+
+.relative(...) {
+  position: relative;
+  .hand(@arguments);
+}
+
+.padding(...) {
+  .hand(@arguments, padding);
+}
+
+.margin(...) {
+  .hand(@arguments, margin);
+}
+
+.border-color(...) {
+  .hand(@arguments, border, color);
+}
+
+.border-style(...) {
+  .hand(@arguments, border, style);
+}
+
+.border-width(...) {
+  .hand(@arguments, border, width);
+}

@@ -1,62 +1,17 @@
 /*!
  * Created by Abaddon (abaddongit@gmail.com)
  */
-//@import "sprites.less";
 //@import "normalize/normalize.css";
 //@import "grid/grid.css";
 //@import "../fonts/fonts.less";
-@import "def.less";
+@import "variables.less";
+@import "compability.less";
+@import "util.less";
+@import "base.less";
+@import "normalize.less";
 
-/*------------------SPRITE ELEMENT CLASS GENERATOR------------*/
-@site-sprite: one, two;
-@sLength: length(@site-sprite);
-
-.loop (@i) when (@i > 0) {
-  @sp: extract(@site-sprite, @i);
-  .sprite--@{sp} {
-    //    .sprite(@@sp);
-  }
-  .loop(@i - 1);
-}
-
-.loop(@sLength);
-/*-------------------END SPRITE CLASS GENERATORS------------------*/
-
-/*---------------GENERATE COLOR CLASSES----------------*/
-@white: #fff;
-@black: #000;
-
-@site-colors: white, black;
-@length: length(@site-colors);
-
-.c-loop (@index) when (@index > 0) {
-  @col: extract(@site-colors, @index);
-  .@{col} {
-    color: @@col;
-  }
-  .c-loop(@index - 1);
-}
-
-.c-loop(@length);
-
-.lazy {
-  display: block;
-}
-
-#badIE {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: #673AB7;
-
-  h1 {
-    .abs;
-    .tcenter;
-    top: 48%;
-    width: 100%;
-    color: @white;
-  }
-}
+.global-normalize();
+.global-normalize-opentype();
 
 /*------------------HEADER BLOCK------------------------*/
 
@@ -69,6 +24,10 @@
 
 main {
 
+}
+
+.test {
+  .linear-gradient(left, red, green, blue);
 }
 
 /*------------------END MAIN BLOCK----------------------------*/

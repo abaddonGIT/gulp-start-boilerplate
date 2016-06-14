@@ -46,11 +46,6 @@
         "grid.css"
       ]
     },
-    "normalize-css": {
-      "src/css/normalize": [
-        "normalize.css"
-      ]
-    },
     "font-awesome": {
       "src/css/font-awesome/css": [
         "css/*"

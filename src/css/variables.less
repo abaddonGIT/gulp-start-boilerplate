@@ -1,0 +1,59 @@
+@import "sprites.less";
+
+/*****************************************************
+* Typographic  settings
+******************************************************/
+@default-base-font-family: 'Helvetica Neue', Arial, sans-serif;
+@default-heading-font-family: 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', sans-serif;
+@default-code-font-family: Monaco, Consolas, monospace;
+
+@default-font-html-size: 10px;
+@default-font-size: 1.4rem;
+@default-text-color: @black;
+
+/*****************************************************
+* Visual settings
+****************************************************/
+@default-border-radius: 5px;
+@support-html5: true;
+
+/******************************************************
+* Colors
+*******************************************************/
+@white: #fff;
+@black: #000;
+/*---------------END GENERATE COLOR CLASSES----------------*/
+
+/************************************************
+* SPRITE ELEMENT CLASS GENERATOR
+***********************************************/
+
+@site-sprite: one, two;
+@sLength: length(@site-sprite);
+
+.sprite-loop (@i) when (@i > 0) {
+  @sp: extract(@site-sprite, @i);
+  .sprite--@{sp} {
+    //    .sprite(@@sp);
+  }
+  .sprite-loop(@i - 1);
+}
+
+.sprite-loop(@sLength);
+
+/*********************************************
+* GENERATE COLOR CLASSES
+**********************************************/
+
+@site-colors: white, black;
+@length: length(@site-colors);
+
+.color-loop (@index) when (@index > 0) {
+  @col: extract(@site-colors, @index);
+  .@{col} {
+    color: @@col;
+  }
+  .color-loop(@index - 1);
+}
+
+.color-loop(@length);
