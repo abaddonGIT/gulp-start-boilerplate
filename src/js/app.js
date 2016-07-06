@@ -4,6 +4,19 @@
 /*global window, document, console*/
 "use strict";
 import Uses from "./UsesFunctions";
-(function (d, w) {
+(function (d, w, $) {
+    class App {
+        constructor() {
 
-}(document, window));
+        }
+
+        run() {
+
+        }
+    }
+
+    $(d).ready(function () {
+        const app = new App();
+        app.run();
+    });
+}(document, window, jQuery));

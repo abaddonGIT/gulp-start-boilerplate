@@ -117,10 +117,7 @@ html {
   color: #fff;
 }
 .noselect {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .res {
   display: block;
@@ -151,14 +148,6 @@ a:active {
    * 2. Prevent iOS text size adjust after orientation change, without disabling
    *    user zoom.
    */
-html {
-  font-size: 100%;
-  /* 1 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-}
 /**
    * Address `font-family` inconsistency between `textarea` and other form
    * elements.
@@ -593,8 +582,7 @@ input[type="search"]::-webkit-search-decoration {
    */
 html,
 body {
-  -webkit-font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
-          font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
+  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
   /* 1. */
 }
 /* Headings
@@ -605,8 +593,7 @@ body {
 h1,
 h2,
 h3 {
-  -webkit-font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1;
-          font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1;
+  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 1;
   /* 1. */
 }
 /* Text-level semantics
@@ -618,16 +605,14 @@ h3 {
 abbr {
   text-transform: uppercase;
   /* 1 */
-  -webkit-font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "smcp" 1, "c2sc" 1;
-          font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "smcp" 1, "c2sc" 1;
+  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "smcp" 1, "c2sc" 1;
   /* 2 */
 }
 /*
    * TODO: Turn on diagonal fractions where appropriate
    */
 time {
-  -webkit-font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0;
-          font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0;
+  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0;
 }
 /*
    * 1. Turn off kerning and ligatures,
@@ -637,24 +622,21 @@ pre,
 kbd,
 samp,
 code {
-  -webkit-font-feature-settings: "kern" 0, "liga" 0, "dlig" 0, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
-          font-feature-settings: "kern" 0, "liga" 0, "dlig" 0, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+  font-feature-settings: "kern" 0, "liga" 0, "dlig" 0, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
   /* 1. */
 }
 /**
    * 1. Turn on proper supercript numerals
    */
 sup {
-  -webkit-font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "sups" 1;
-          font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "sups" 1;
+  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "sups" 1;
   /* 1. */
 }
 /**
    * 1. Turn on proper subscript numerals
    */
 sub {
-  -webkit-font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "subs" 1;
-          font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "subs" 1;
+  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0, "subs" 1;
   /* 1. */
 }
 /* Tables
@@ -664,8 +646,7 @@ sub {
    *    Turns off kerning, as it could impact tabular numerals
    */
 table {
-  -webkit-font-feature-settings: "kern" 0, "liga" 1, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
-          font-feature-settings: "kern" 0, "liga" 1, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
+  font-feature-settings: "kern" 0, "liga" 1, "pnum" 0, "tnum" 1, "onum" 0, "lnum" 1, "zero" 1;
   /* 1. */
 }
 /**
@@ -673,8 +654,7 @@ table {
    */
 table thead,
 table tfoot {
-  -webkit-font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
-          font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
+  font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "dlig" 0;
   /* 2. */
 }
 /* Forms
@@ -691,14 +671,17 @@ input[type="number"],
 input[type="range"],
 input[type="tel"],
 input[type="week"] {
-  -webkit-font-feature-settings: "kern" 0, "liga" 1, "pnum" 1, "tnum" 0, "onum" 0, "lnum" 1, "zero" 0;
-          font-feature-settings: "kern" 0, "liga" 1, "pnum" 1, "tnum" 0, "onum" 0, "lnum" 1, "zero" 0;
+  font-feature-settings: "kern" 0, "liga" 1, "pnum" 1, "tnum" 0, "onum" 0, "lnum" 1, "zero" 0;
   /* 1. */
 }
 /*------------------HEADER BLOCK------------------------*/
 /*------------------END HEADER BLOCK------------------------*/
 /*------------------MAIN BLOCK----------------------------*/
 .test {
+  background-image: -webkit-linear-gradient(left, red, green, blue);
+  background-image: -moz-linear-gradient(left, red, green, blue);
+  background-image: -moz-linear-gradient(to right, red, green, blue);
+  background-image: -o-linear-gradient(to right, red, green, blue);
   background-image: linear-gradient(to right, red, green, blue);
   background-repeat: repeat;
 }
