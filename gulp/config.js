@@ -53,9 +53,9 @@ module.exports = {
         remotePath: ''
     },
     fonts: {
-        src: src + "/fonts/*.ttf",
-        dist: src + "/fonts",
-        woff: src + "/fonts/*.woff"
+        src: src + "/css/fonts/*.ttf",
+        dist: src + "/css/fonts",
+        woff: src + "/css/fonts/*.woff"
     },
     svg: {
         src: src + "/svg/*.svg",

@@ -47,5 +47,5 @@ gulp.task('fonts', ['prepare'], function () {
 
     getFolders();
 
-    return file('fonts.less', code).pipe(gulp.dest('./src/fonts'));
+    return file('fonts.less', code).pipe(gulp.dest('./src/css'));
 });
