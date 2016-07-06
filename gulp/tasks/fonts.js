@@ -5,8 +5,8 @@ var gulp = require("gulp"),
     fs = require("fs"),
     file = require('gulp-file'),
     config = require('../config').fonts,
-    ttf2eot = require('gulp-ttf2eot'),
     cssfont64 = require('gulp-cssfont64'),
+    ttf2woff2 = require('gulp-ttf2woff2'),
     ttf2woff = require('gulp-ttf2woff');
 
 /*
@@ -18,11 +18,11 @@ gulp.task("woff", function () {
         .pipe(gulp.dest(config.dist));
 });
 /*
- * Create eot file
+ * Create woff2 file
  */
-gulp.task('eot', function () {
+gulp.task("woff2", function () {
     return gulp.src([config.src])
-        .pipe(ttf2eot())
+        .pipe(ttf2woff2())
         .pipe(gulp.dest(config.dist));
 });
 
@@ -33,22 +33,19 @@ gulp.task('prepare', ['woff', 'eot'], function () {
 });
 
 gulp.task('fonts', ['prepare'], function () {
-    var code = "", code2 = "";
+    var code = "";
 
     function getFolders() {
         return fs.readdirSync('./src/fonts')
             .filter(function (file) {
                 var f = file.split(".");
                 if (f.indexOf("ttf") !== -1) {
-                    code += '@import "../fonts/' + f[0] + '.css";';
-                    code2 += '.' + f[0].replace("-", "") + ' {' +
-                        'font-family: "' + f[0] + '";' +
-                        '}';
+                    code += '@font-face { font-family: "' + f[0] + '"; src: url("' + f[0] + '.woff2") format("woff2"), url("' + f[0] + '.woff") format("woff");}';
                 }
             });
     }
 
     getFolders();
 
-    return file('fonts.less', code + code2).pipe(gulp.dest('./src/fonts'));
+    return file('fonts.less', code).pipe(gulp.dest('./src/fonts'));
 });
