@@ -17,16 +17,15 @@ gulp.task("woff", function () {
         .pipe(ttf2woff())
         .pipe(gulp.dest(config.dist));
 });
-/*
- * Create woff2 file
- */
+
 gulp.task("woff2", function () {
-    return gulp.src([config.src])
+    gulp.src([config.src])
         .pipe(ttf2woff2())
         .pipe(gulp.dest(config.dist));
 });
 
-gulp.task('prepare', ['woff', 'eot'], function () {
+
+gulp.task('prepare', ['woff', 'woff2'], function () {
     return gulp.src(config.woff)
         .pipe(cssfont64())
         .pipe(gulp.dest(config.dist));
@@ -36,11 +35,11 @@ gulp.task('fonts', ['prepare'], function () {
     var code = "";
 
     function getFolders() {
-        return fs.readdirSync('./src/fonts')
+        return fs.readdirSync('./src/css/fonts')
             .filter(function (file) {
                 var f = file.split(".");
                 if (f.indexOf("ttf") !== -1) {
-                    code += '@font-face { font-family: "' + f[0] + '"; src: url("' + f[0] + '.woff2") format("woff2"), url("' + f[0] + '.woff") format("woff");}';
+                    code += '@font-face { font-family: "' + f[0] + '"; src: url("./fonts/' + f[0] + '.woff2") format("woff2"), url("./fonts/' + f[0] + '.woff") format("woff");}';
                 }
             });
     }
