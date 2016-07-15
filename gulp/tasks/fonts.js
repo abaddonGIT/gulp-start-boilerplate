@@ -6,7 +6,6 @@ var gulp = require("gulp"),
     file = require('gulp-file'),
     config = require('../config').fonts,
     cssfont64 = require('gulp-cssfont64'),
-    ttf2woff2 = require('gulp-ttf2woff2'),
     ttf2woff = require('gulp-ttf2woff');
 
 /*
@@ -18,14 +17,8 @@ gulp.task("woff", function () {
         .pipe(gulp.dest(config.dist));
 });
 
-gulp.task("woff2", function () {
-    gulp.src([config.src])
-        .pipe(ttf2woff2())
-        .pipe(gulp.dest(config.dist));
-});
 
-
-gulp.task('prepare', ['woff', 'woff2'], function () {
+gulp.task('prepare', ['woff'], function () {
     return gulp.src(config.woff)
         .pipe(cssfont64())
         .pipe(gulp.dest(config.dist));

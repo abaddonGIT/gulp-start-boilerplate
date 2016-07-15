@@ -48,7 +48,7 @@ export default {
 
         for (let i = 0; i < ln; i++) {
             let item = all[i];
-            item.style.cssText += "min-height: " + max + "px;";
+            item.style.cssText += "height: " + max + "px;";
         }
     }
 };
