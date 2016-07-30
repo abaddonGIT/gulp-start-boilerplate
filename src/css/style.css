@@ -136,8 +136,9 @@ html {
   height: auto;
 }
 a:hover,
-a:active {
-  outline: none;
+a:active,
+a:focus {
+  outline: none !important;
 }
 * {
   outline: none;
