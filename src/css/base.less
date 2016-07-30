@@ -1,4 +1,5 @@
 @import "variables.less";
+@import "util.less";
 
 html {
   font-size: @default-font-html-size;
@@ -16,6 +17,10 @@ body, html {
 }
 
 /*base classes*/
+.clear {
+  .clearfix();
+}
+
 .left {
   float: left;
 }
@@ -94,6 +99,10 @@ body, html {
     width: 100%;
     color: @white;
   }
+}
+
+.sprite {
+  .b-inline;
 }
 
 .rotation(@grad) {

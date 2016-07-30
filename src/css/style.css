@@ -53,6 +53,14 @@ html {
   height: 100%;
 }
 /*base classes*/
+.clear:before,
+.clear:after {
+  display: table;
+  content: "";
+}
+.clear:after {
+  clear: both;
+}
 .left {
   float: left;
 }
@@ -115,6 +123,9 @@ html {
   top: 48%;
   width: 100%;
   color: #fff;
+}
+.sprite {
+  display: inline-block;
 }
 .noselect {
   user-select: none;
