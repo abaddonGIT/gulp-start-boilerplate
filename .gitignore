@@ -3,21 +3,13 @@ img
 dist
 node_modules
 .idea
-src/svg/*.svg
 
 src/css/grid
-src/css/bootstrap
 src/css/font-awesome
-src/css/normalize
 src/css/sprites.less
 src/css/*.css
 src/js/venders/**/
 src/css/sprites.css
-src/images/sprites.png
-src/fonts/*.less
-src/fonts/*.css
-src/fonts/*.eot
-src/fonts/*.woff
 src/htdocs/*.html
 
 src/css/base.css
