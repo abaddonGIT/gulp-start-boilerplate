@@ -31,8 +31,9 @@ gulp.task('fonts', ['prepare'], function () {
         return fs.readdirSync('./src/css/fonts')
             .filter(function (file) {
                 var f = file.split(".");
-                if (f.indexOf("ttf") !== -1) {
-                    code += '@font-face { font-family: "' + f[0] + '"; src: url("./fonts/' + f[0] + '.woff2") format("woff2"), url("./fonts/' + f[0] + '.woff") format("woff");}';
+                if (f.indexOf("woff") !== -1) {
+                    code += '@font-face { font-family: "' + f[0] + '"; src: url("./fonts/' + f[0] + '.woff2") format("woff2"), url("./fonts/' + f[0] + '.woff") format("woff");';
+                    code += "font-weight: normal; font-style: normal;}";
                 }
             });
     }
