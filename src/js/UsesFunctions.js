@@ -8,7 +8,7 @@ export default {
      * Check mobile device
      */
     isMobile: function () {
-        return device.mobile(); 
+        return device.mobile();
     },
     /**
      * Set max height
@@ -20,7 +20,9 @@ export default {
         if (!ln) return false;
         let max = 0;
         for (let i = 0; i < ln; i++) {
-            let item = all[i], height = $(item).innerHeight();
+            let item = all[i];
+            item.style.cssText += "height: auto;";
+            let height = $(item).innerHeight();
             if (max < height) {
                 max = height;
             }

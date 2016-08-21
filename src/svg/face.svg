@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42" height="41" viewBox="0 0 42 41">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #c5a67a;
+        stroke-width: 1.5px;
+      }
+
+      .cls-2 {
+        font-size: 34.171px;
+        fill: #c5a67a;
+        font-family: "Open Sans Semibold";
+      }
+    </style>
+  </defs>
+  <circle id="Ellipse_3_copy_4" data-name="Ellipse 3 copy 4" class="cls-1" cx="20.922" cy="20.5" r="20.234"/>
+  <text id="f" class="cls-2" transform="translate(15.03 31.462) scale(0.809 0.819)">f</text>
+</svg>

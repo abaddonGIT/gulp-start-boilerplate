@@ -4,37 +4,24 @@
 var gulp = require("gulp"),
     fs = require("fs"),
     file = require('gulp-file'),
-    config = require('../config').fonts,
-    cssfont64 = require('gulp-cssfont64'),
-    ttf2woff = require('gulp-ttf2woff');
-
-/*
- * Create woff file
- */
-gulp.task("woff", function () {
-    return gulp.src([config.src])
-        .pipe(ttf2woff())
-        .pipe(gulp.dest(config.dist));
-});
+    config = require('../config').fonts;
 
 
-gulp.task('prepare', ['woff'], function () {
-    return gulp.src(config.woff)
-        .pipe(cssfont64())
-        .pipe(gulp.dest(config.dist));
-});
-
-gulp.task('fonts', ['prepare'], function () {
+gulp.task('fonts', function () {
     var code = "";
 
     function getFolders() {
         return fs.readdirSync('./src/css/fonts')
             .filter(function (file) {
-                var f = file.split(".");
-                if (f.indexOf("woff") !== -1) {
-                    code += '@font-face { font-family: "' + f[0] + '"; src: url("./fonts/' + f[0] + '.woff2") format("woff2"), url("./fonts/' + f[0] + '.woff") format("woff");';
-                    code += "font-weight: normal; font-style: normal;}";
-                }
+                code += `@font-face {
+                        font-family: "${file}";
+                        src: url("./fonts/${file}/${file}.eot");
+                        src: url("./fonts/${file}/${file}.eot?#iefix")format("embedded-opentype"),
+                        url("./fonts/${file}/${file}.woff") format("woff"),
+                        url("./fonts/${file}/${file}.ttf") format("truetype");
+                        font-style: normal;
+                        font-weight: normal;
+                    }`;
             });
     }
 

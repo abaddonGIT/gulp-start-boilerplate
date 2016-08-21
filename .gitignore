@@ -1,5 +1,5 @@
 # Created by .gitignore support plugin (hsz.mobi)
-img
+src/images
 dist
 node_modules
 .idea
@@ -18,5 +18,5 @@ src/plugins/**
 *.-compiled.js
 src/css/hover/*
 src/css/animate/*
-src/css/animate/*
 src/css/hover/
+src/svg/

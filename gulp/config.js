@@ -59,6 +59,7 @@ module.exports = {
     },
     svg: {
         src: src + "/svg/*.svg",
-        dist: src + "/img"
+        dist: src + "/images/svg",
+        rebuildSrc: src + "/images/svg/*.svg"
     }
 };

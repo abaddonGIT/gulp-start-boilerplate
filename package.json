@@ -41,8 +41,6 @@
     "gulp-sftp": "latest",
     "fs": "latest",
     "gulp-file": "latest",
-    "gulp-cssfont64": "latest",
-    "gulp-ttf2woff": "latest",
     "path": "latest"
   },
   "browser": {
