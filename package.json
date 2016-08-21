@@ -41,7 +41,10 @@
     "gulp-sftp": "latest",
     "fs": "latest",
     "gulp-file": "latest",
-    "path": "latest"
+    "path": "latest",
+    "gulp-svgmin": "latest",
+    "gulp-cheerio": "latest",
+    "gulp-svg-symbols": "latest"
   },
   "browser": {
     "jQuery": "./src/js/venders/jquery/jquery.min.js"
