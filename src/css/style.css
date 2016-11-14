@@ -705,9 +705,75 @@ input[type="week"] {
 * is-, has- - Показывают различные состояния, которые могут быть у компонентов
 * js- - Они указывают на то, что поведение JavaScript привязано к компоненту. Стили с ними не ассоциируются; используются только для облегчения манипуляций со скриптами.
 ********************************************************************************************/
+html {
+  font-size: 10px;
+}
+body {
+  color: #000;
+  font-size: 1.4rem;
+}
+.c-hamburger {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 45px;
+}
+.c-hamburger span {
+  height: 9px;
+  border-radius: 9px;
+  background-color: #fff;
+  transition: opacity 0.35s, transform 0.35s;
+  display: block;
+}
+.c-hamburger span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: 0;
+}
+.c-hamburger span:nth-child(2) {
+  position: absolute;
+  top: 18px;
+  right: 0;
+  bottom: auto;
+  left: 0;
+}
+.c-hamburger span:nth-child(3) {
+  position: absolute;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.c-hamburger.is-open span:nth-child(1) {
+  transform: rotate(135deg);
+  position: absolute;
+  top: 18px;
+  right: 0;
+  bottom: auto;
+  left: 0;
+}
+.c-hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.c-hamburger.is-open span:nth-child(3) {
+  transform: rotate(-135deg);
+  position: absolute;
+  top: 18px;
+  right: 0;
+  bottom: auto;
+  left: 0;
+}
 /**********************************************
 * BASE STYLES
 **********************************************/
+.normal {
+  font-feature-settings: normal;
+}
 .l-wrapper {
   min-height: 100%;
 }

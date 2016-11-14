@@ -20,9 +20,65 @@
 * js- - Они указывают на то, что поведение JavaScript привязано к компоненту. Стили с ними не ассоциируются; используются только для облегчения манипуляций со скриптами.
 ********************************************************************************************/
 
+html {
+  font-size: @default-font-html-size;
+}
+
+body {
+  color: @default-text-color;
+  font-size: @default-font-size;
+}
+
+//Hamburger icon with animation
+.c-hamburger {
+  .relative(0);
+  .size(60px, 45px);
+  span {
+    height: 9px;
+    border-radius: 9px;
+    background-color: @white;
+    transition: opacity 0.35s, transform 0.35s;
+    .block;
+
+    &:nth-child(1) {
+      .absolute(0, 0, auto, 0);
+    }
+
+    &:nth-child(2) {
+      .absolute(18px, 0, auto, 0);
+    }
+
+    &:nth-child(3) {
+      .absolute(auto, 0, 0, 0);
+    }
+  }
+
+  &.is-open {
+    span {
+      &:nth-child(1) {
+        transform: rotate(135deg);
+        .absolute(18px, 0, auto, 0);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-135deg);
+        .absolute(18px, 0, auto, 0);
+      }
+    }
+  }
+}
+
 /**********************************************
 * BASE STYLES
 **********************************************/
+.normal {
+  font-feature-settings: normal;
+}
+
 .l-wrapper {
   min-height: 100%;
 }

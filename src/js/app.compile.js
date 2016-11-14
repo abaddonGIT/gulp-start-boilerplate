@@ -25,8 +25,9 @@ exports.default = {
         if (!ln) return false;
         var max = 0;
         for (var i = 0; i < ln; i++) {
-            var item = all[i],
-                height = $(item).innerHeight();
+            var item = all[i];
+            item.style.cssText += "height: auto;";
+            var height = $(item).innerHeight();
             if (max < height) {
                 max = height;
             }
