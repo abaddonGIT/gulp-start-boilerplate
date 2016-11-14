@@ -1,22 +1,8 @@
 # Created by .gitignore support plugin (hsz.mobi)
-src/images
 dist
 node_modules
 .idea
-
-src/css/grid
-src/css/font-awesome
-src/css/sprites.less
 src/css/*.css
-src/js/venders/**/
-src/css/sprites.css
 src/htdocs/*.html
-
-src/css/base.css
-src/css/style.css
-src/plugins/**
 *.-compiled.js
-src/css/hover/*
-src/css/animate/*
-src/css/hover/
-src/svg/
+src/js/venders/
