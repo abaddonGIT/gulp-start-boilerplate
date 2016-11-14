@@ -1,0 +1,19 @@
+.c-slider__title {
+  font-size: 3vw; }
+  @media (max-width: 800px) {
+    .c-slider__title {
+      font-size: 24px; } }
+  @media (min-width: 1600px) {
+    .c-slider__title {
+      font-size: 48px; } }
+
+.c-title {
+  font-size: 3vm; }
+  @media (max-width: 666.66667px) {
+    .c-title {
+      font-size: 20px; } }
+  @media (min-width: 1000px) {
+    .c-title {
+      font-size: 30px; } }
+
+/*# sourceMappingURL=responsive.css.map */
