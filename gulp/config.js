@@ -57,9 +57,16 @@ module.exports = {
         dist: src + "/css/fonts",
         woff: src + "/css/fonts/*.woff"
     },
+    pug: {
+        src: src + "/htdocs/*.pug",
+        dist: src + "/htdocs"
+    },
     svg: {
         src: src + "/svg/*.svg",
-        dist: src + "/images/svg",
-        rebuildSrc: src + "/images/svg/*.svg"
+        dist: src + "/images/sprite"
+    },
+    less: {
+        src: src + "/css/*.less",
+        dist: src + "/css"
     }
 };

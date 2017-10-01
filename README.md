@@ -3,6 +3,8 @@ Starting a project for Gulp + Browserify
 
 ### Installation ###
     npm install
+### Fast install ###
+    yarn install
 ### Install venders ###
     gulp bower
 ### Dev work ###

@@ -4,10 +4,10 @@
 
 (function (require) {
     "use strict";
-    var gulp = require('gulp');
-    var requireDir = require('require-dir');
-    var browserSync = require('browser-sync');
-    var reload = browserSync.reload;
+    const gulp = require('gulp');
+    const requireDir = require('require-dir');
+    const browserSync = require('browser-sync');
+    const reload = browserSync.reload;
     requireDir('./gulp/tasks', {recurse: true});
 
     gulp.task('browser-sync', function () {
@@ -21,10 +21,12 @@
     });
 
     gulp.task('watch', ['browser-sync'], function () {
+        gulp.watch('src/css/*.less', ['less', browserSync.reload]);
         gulp.watch('src/css/*.css', ['prefix']);
+        gulp.watch('src/htdocs/*.pug', ['pug', browserSync.reload]);
         gulp.watch('src/js/app.js', ['browserify', browserSync.reload]);
         gulp.watch("src/htdocs/*.html").on("change", browserSync.reload);
     });
 
-    gulp.task('production', ['sprites', 'imagemin', 'mincss', 'uglifyJs', 'html']);
+    gulp.task('production', ['less', 'pug', 'svg', 'sprites', 'imagemin', 'mincss', 'uglifyJs', 'html']);
 }(require));

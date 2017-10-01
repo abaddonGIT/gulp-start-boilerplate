@@ -1,12 +1,13 @@
 /**
- * Created by Abaddon on 20.08.2016.
+ * Created by abaddon on 21.04.2017.
+ * Для svg спрайтов
  */
-"use strict";
-var gulp = require('gulp'),
-    config = require('../config').svg,
+const gulp = require('gulp'),
+    svgSprite = require('gulp-svg-sprite'),
     svgmin = require('gulp-svgmin'),
     cheerio = require('gulp-cheerio'),
-    svgSymbols = require('gulp-svg-symbols');
+    replace = require('gulp-replace'),
+    config = require('../config').svg;
 
 gulp.task('svg', function () {
     return gulp.src(config.src)
@@ -15,38 +16,31 @@ gulp.task('svg', function () {
                 pretty: true
             }
         }))
-        .pipe(svgSymbols({
-            svgClassname: 'svg-icons',
-            id: 'icon-%f',
-            className: '.icon-%f',
-            transformData: function (svg, defaultData, options) {
-                let id = defaultData.id;
-                if (defaultData.style) {
-                    defaultData.style = defaultData.style.replace(/cls/g, `${id}`);
-                }
-                return defaultData;
-            }
-        }))
-        .pipe(gulp.dest(config.dist));
-});
-
-gulp.task("buildSvg", ['svg'], function () {
-    return gulp.src(config.rebuildSrc)
+        //Сносимненужные тэги со стилями
         .pipe(cheerio({
             run: function ($) {
-                $('symbol').each(function () {
-                    let id = $(this).attr("id");
-                    if ($(this).children().length) {
-                        let i = 1;
-                        $(this).children().each(function () {
-                            let className = `${id}-${i}`;
-                            $(this).attr("class", className);
-                            i++;
-                        });
-                    }
-                });
+                $('[fill]').removeAttr('fill');
+                $('[stroke]').removeAttr('stroke');
+                $('[style]').removeAttr('style');
+                $('defs').remove();
+                $('style').remove();
             },
-            parserOptions: {xmlMode: true}
+            parseOptions: {xmlMode: true}
+        }))
+        .pipe(replace('&gt;', '>'))
+        //Тут строим прайс
+        .pipe(svgSprite({
+            mode: {
+                symbol: {
+                    sprite: "../../sprite.svg",
+                    render: {
+                        less: {
+                            dest: '../../../css/svgSprite.less',
+                            template: './src/css/template/sprite_template.less'
+                        }
+                    }
+                }
+            }
         }))
         .pipe(gulp.dest(config.dist));
 });
