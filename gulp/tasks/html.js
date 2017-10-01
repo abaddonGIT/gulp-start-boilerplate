@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 
 gulp.task("html", function () {
     gulp.src(config.src).pipe(gulp.dest(config.dest));
-    gulp.src("./src/css/**").pipe(gulp.dest('./dist/css'));
+    gulp.src("./src/css/**/*.css").pipe(gulp.dest('./dist/css'));
 
     gulp.src("./src/css/fonts/**").pipe(gulp.dest("./dist/css/fonts"));
     gulp.src(config.vendorsSrc).pipe(gulp.dest(config.vendorsDest));

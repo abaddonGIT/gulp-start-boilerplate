@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 
 gulp.task('uglifyJs', ['browserify'], function () {
     return gulp.src(config.src)
-        .pipe(uglify({preserveComments: "some"}))
+        .pipe(uglify())
         .on('error', error.standartError)
         .pipe(gulp.dest(config.dest))
         .pipe(size());

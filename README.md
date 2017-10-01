@@ -15,5 +15,5 @@ Starting a project for Gulp + Browserify
     gulp sftp
 ### Generate sprites ###
     gulp sprites
-### Generate svg ###
-    gulp buildSvg
+### Generate svg sprite ###
+    gulp svg
