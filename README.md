@@ -8,9 +8,11 @@ Starting a project for Gulp + Browserify
 ### Install venders ###
     gulp bower
 ### Dev work ###
-    gulp watch
+    npm start
 ### Build the project ###
-    gulp production
+    npm run build
+### Start eslint
+    npm run lint    
 ### Load to server ###
     gulp sftp
 ### Generate sprites ###
