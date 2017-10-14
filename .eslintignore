@@ -1,0 +1,5 @@
+dist/
+gulp/
+src/js/venders/
+gulpfile.js
+src/js/app.compile.js

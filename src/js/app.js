@@ -1,22 +1,23 @@
-/*!
+/**
  * Created by Abaddon (abaddongit@gmail.com)
  */
-/*global window, document, console*/
-"use strict";
-import Uses from "./UsesFunctions";
-(function (d, w, $) {
-    class App {
-        constructor() {
+/* global window, document, console */
 
-        }
+import Uses from './UsesFunctions';
 
-        run() {
-
-        }
+$(function (d, w, $) {
+  class App {
+    constructor() {
+      this.body = $('body');
     }
 
-    $(d).ready(function () {
-        const app = new App();
-        app.run();
-    });
+    run() {
+      if (Uses.isMobile()) {
+        this.body.addClass('is-mobile');
+      }
+    }
+  }
+
+  const app = new App();
+  app.run();
 }(document, window, jQuery));

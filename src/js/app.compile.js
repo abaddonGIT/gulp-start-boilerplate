@@ -1,66 +1,69 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
-require("./venders/device");
+require('./venders/device');
 
 exports.default = {
-    /**
-     * Check mobile device
-     */
-    isMobile: function isMobile() {
-        return device.mobile();
-    },
-    /**
-     * Set max height
-     * @param selector
-     * @returns {boolean}
-     */
-    autoHeight: function autoHeight(selector) {
-        var all = document.querySelectorAll(selector),
-            ln = all.length;
-        if (!ln) return false;
-        var max = 0;
-        for (var i = 0; i < ln; i++) {
-            var item = all[i];
-            item.style.cssText += "height: auto;";
-            var height = $(item).innerHeight();
-            if (max < height) {
-                max = height;
-            }
-        }
+  /**
+   * Check mobile device
+   */
+  isMobile: function isMobile() {
+    return device.mobile();
+  },
 
-        for (var _i = 0; _i < ln; _i++) {
-            var _item = all[_i];
-            _item.style.cssText += "height: " + max + "px;";
-        }
-    },
-    /**
-     * Get random number
-     * @param min
-     * @param max
-     * @returns {*}
-     */
-    random: function random(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+  /**
+   * Set max height
+   * @param selector
+   * @returns {boolean}
+   */
+  autoHeight: function autoHeight(selector) {
+    var all = document.querySelectorAll(selector);
+    var ln = all.length;
+    if (!ln) return false;
+    var max = 0;
+    for (var i = 0; i < ln; i += 1) {
+      var item = all[i];
+      item.style.cssText += 'height: auto;';
+      var height = $(item).innerHeight();
+      if (max < height) {
+        max = height;
+      }
     }
+
+    for (var _i = 0; _i < ln; _i += 1) {
+      var _item = all[_i];
+      _item.style.cssText += 'height: ' + max + ' px;';
+    }
+    return true;
+  },
+
+  /**
+   * Get random number
+   * @param min
+   * @param max
+   * @returns {*}
+   */
+  random: function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 }; /**
     * Created by abaddon on 26.05.2016.
     */
+/* global device */
 
 },{"./venders/device":3}],2:[function(require,module,exports){
-/*!
- * Created by Abaddon (abaddongit@gmail.com)
- */
-/*global window, document, console*/
-"use strict";
+'use strict';
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * Created by Abaddon (abaddongit@gmail.com)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+/* global window, document, console */
 
-var _UsesFunctions = require("./UsesFunctions");
+var _UsesFunctions = require('./UsesFunctions');
 
 var _UsesFunctions2 = _interopRequireDefault(_UsesFunctions);
 
@@ -68,25 +71,29 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-(function (d, w, $) {
-    var App = function () {
-        function App() {
-            _classCallCheck(this, App);
+$(function (d, w, $) {
+  var App = function () {
+    function App() {
+      _classCallCheck(this, App);
+
+      this.body = $('body');
+    }
+
+    _createClass(App, [{
+      key: 'run',
+      value: function run() {
+        if (_UsesFunctions2.default.isMobile()) {
+          this.body.addClass('is-mobile');
         }
+      }
+    }]);
 
-        _createClass(App, [{
-            key: "run",
-            value: function run() {}
-        }]);
+    return App;
+  }();
 
-        return App;
-    }();
-
-    $(d).ready(function () {
-        var app = new App();
-        app.run();
-    });
-})(document, window, jQuery);
+  var app = new App();
+  app.run();
+}(document, window, jQuery));
 
 },{"./UsesFunctions":1}],3:[function(require,module,exports){
 "use strict";

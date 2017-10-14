@@ -1,28 +1,17 @@
 /**
  * Created by Abaddon on 08.07.2016.
  */
-var wow = require('../venders/wow/wow.js').WOW;
+const AOS = require('../venders/aos/aos.js');
 
 class Animate {
-    constructor() {
-
-    }
-
-    init() {
-        var wow = new WOW(
-            {
-                boxClass: 'wool',
-                animateClass: 'animated',
-                offset: 200,
-                mobile: false,
-                live: true,
-                callback: function (box) {
-                    var type = box.getAttribute("data-type");
-                }
-            }
-        );
-        wow.init();
-    }
+  static init() {
+    AOS.init({
+      offset: 200,
+      duration: 600,
+      easing: 'ease-in-sine',
+      delay: 100,
+    });
+  }
 }
 
 export default new Animate();

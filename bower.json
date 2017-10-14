@@ -6,16 +6,22 @@
     "jquery": "*",
     "fancybox": "^2.1.5",
     "bootstrap-grid-css": "latest",
-    "wow": "latest",
     "animate.css": "latest",
     "jquery.maskedinput": "~1.4.1",
     "jquery-selectric": "~1.9.5",
     "owl.carousel": "latest",
     "hover": "latest",
     "flexslider": "latest",
-    "nouislider": "latest"
+    "nouislider": "latest",
+    "aos": "latest"
   },
   "overrides": {
+    "aos": {
+      "src/js/venders/aos": [
+        "dist/aos.css",
+        "dist/aos.js"
+      ]
+    },
     "jquery": {
       "src/js/venders/jquery": [
         "dist/jquery.min.js"
