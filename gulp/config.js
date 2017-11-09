@@ -29,7 +29,7 @@ module.exports = {
         versions: ['last 2 versions']
     },
     browserify: {
-        src: src + '/js/app.js',
+        src: src + '/js/index.app.js',
         dest: src + '/js',
         compileName: 'app.compile.js'
     },

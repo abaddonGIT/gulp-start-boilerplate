@@ -24,7 +24,7 @@
         gulp.watch('src/css/*.less', ['less', browserSync.reload]);
         gulp.watch('src/css/*.css', ['prefix']);
         gulp.watch('src/htdocs/*.pug', ['pug', browserSync.reload]);
-        gulp.watch('src/js/app.js', ['browserify', browserSync.reload]);
+        gulp.watch(['src/js/index.app.js', 'src/js/App.js'], ['browserify', browserSync.reload]);
         gulp.watch("src/htdocs/*.html").on("change", browserSync.reload);
     });
 

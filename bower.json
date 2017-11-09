@@ -12,16 +12,9 @@
     "owl.carousel": "latest",
     "hover": "latest",
     "flexslider": "latest",
-    "nouislider": "latest",
-    "aos": "latest"
+    "nouislider": "latest"
   },
   "overrides": {
-    "aos": {
-      "src/js/venders/aos": [
-        "dist/aos.css",
-        "dist/aos.js"
-      ]
-    },
     "jquery": {
       "src/js/venders/jquery": [
         "dist/jquery.min.js"
