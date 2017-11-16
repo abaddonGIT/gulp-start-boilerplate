@@ -1,16 +1,15 @@
 /**
  * Created by abaddon on 27.01.2015.
  */
-var gulp = require('gulp'),
-    browserify = require('browserify'),
-    config = require('../config').browserify,
-    babelify = require('babelify'),
-    error = require('../errors.js'),
-    source = require('vinyl-source-stream');
+const gulp = require('gulp');
+const browserify = require('browserify');
+const config = require('../config').browserify;
+const source = require('vinyl-source-stream');
+const plumber = require('gulp-plumber');
 
 gulp.task("browserify", function () {
-    return browserify(config.src)
-        .bundle().on('error', error.browserifyErrors)
-        .pipe(source(config.compileName))
-        .pipe(gulp.dest(config.dest));
+  return browserify(config.src)
+    .pipe(plumber())
+    .pipe(source(config.compileName))
+    .pipe(gulp.dest(config.dest));
 });

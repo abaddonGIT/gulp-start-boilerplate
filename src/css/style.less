@@ -4,10 +4,11 @@
 //@import "grid/grid.css";
 @import "variables.less";
 @import "compability.less";
-@import "base.less";
+@import "util.less";
+@import "atomic.less";
 @import "normalize.less";
 @import "svgSprite.less";
-@import "../../node_modules/aos/dist/aos.css";
+@import "../js/vendors/aos/aos.css";
 
 .global-normalize();
 .global-normalize-opentype();
@@ -21,8 +22,17 @@
 * js- - Они указывают на то, что поведение JavaScript привязано к компоненту. Стили с ними не ассоциируются; используются только для облегчения манипуляций со скриптами.
 ********************************************************************************************/
 
+body, html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-text-size-adjust: none;
+}
+
 html {
   font-size: @default-font-html-size;
+  .font-family(base);
 }
 
 body {
@@ -30,48 +40,58 @@ body {
   font-size: @default-font-size;
 }
 
-//Hamburger icon with animation
-.c-hamburger {
-  .relative(0);
-  .size(60px, 45px);
-  span {
-    height: 9px;
-    border-radius: 9px;
-    background-color: @white;
-    transition: opacity 0.35s, transform 0.35s;
-    .block;
-
-    &:nth-child(1) {
-      .absolute(0, 0, auto, 0);
-    }
-
-    &:nth-child(2) {
-      .absolute(18px, 0, auto, 0);
-    }
-
-    &:nth-child(3) {
-      .absolute(auto, 0, 0, 0);
-    }
-  }
-
-  &.is-open {
-    span {
-      &:nth-child(1) {
-        transform: rotate(135deg);
-        .absolute(18px, 0, auto, 0);
-      }
-
-      &:nth-child(2) {
-        opacity: 0;
-      }
-
-      &:nth-child(3) {
-        transform: rotate(-135deg);
-        .absolute(18px, 0, auto, 0);
-      }
-    }
+a {
+  &:hover, &:active, &:focus {
+    outline: none !important;
   }
 }
+
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+
+.wow {
+  visibility: hidden;
+}
+
+.clear {
+  .clearfix();
+}
+
+.lazy {
+  display: block;
+}
+
+#badIE {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #673AB7;
+
+  h1 {
+    position: absolute;
+    text-align: center;
+    top: 48%;
+    width: 100%;
+    color: @white;
+  }
+}
+
+.sprite {
+  display: inline-block;
+}
+
+.rotation(@grad) {
+  transform: rotate(@grad);
+}
+
+&.res {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 
 /**********************************************
 * BASE STYLES

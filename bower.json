@@ -16,12 +16,12 @@
   },
   "overrides": {
     "jquery": {
-      "src/js/venders/jquery": [
+      "src/js/vendors/jquery": [
         "dist/jquery.min.js"
       ]
     },
     "fancybox": {
-      "src/js/venders/fancybox": [
+      "src/js/vendors/fancybox": [
         "source/jquery.fancybox.pack.js",
         "source/jquery.fancybox.css",
         "source/*.png",
@@ -48,24 +48,24 @@
       ]
     },
     "wow": {
-      "src/js/venders/wow": [
+      "src/js/vendors/wow": [
         "dist/wow.js",
         "dist/wow.min.js"
       ]
     },
     "jquery.maskedinput": {
-      "src/js/venders/mask": [
+      "src/js/vendors/mask": [
         "dist/jquery.maskedinput.min.js"
       ]
     },
     "jquery-selectric": {
-      "src/js/venders/selectric": [
+      "src/js/vendors/selectric": [
         "public/jquery.selectric.min.js",
         "public/selectric.css"
       ]
     },
     "owl.carousel": {
-      "src/js/venders/owl": [
+      "src/js/vendors/owl": [
         "dist/owl.carousel.min.js",
         "dist/owl.carousel.js",
         "dist/assets/owl.carousel.css",
@@ -81,7 +81,7 @@
       ]
     },
     "flexslider": {
-      "src/js/venders/flex": [
+      "src/js/vendors/flex": [
         "flexslider.css",
         "jquery.flexslider.js",
         "jquery.flexslider-min.js",
@@ -90,7 +90,7 @@
       ]
     },
     "nouislider": {
-      "src/js/venders/nouislider": [
+      "src/js/vendors/nouislider": [
         "./distribute/nouislider.js",
         "./distribute/nouislider.min.css",
         "./distribute/nouislider.min.js"
