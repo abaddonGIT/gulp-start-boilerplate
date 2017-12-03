@@ -2,7 +2,6 @@
  * Created by Abaddon on 08.07.2016.
  */
 const AOS = require('../venders/aos/aos.js');
-
 class Animate {
   static init() {
     AOS.init({
