@@ -38,8 +38,8 @@ module.exports = {
         dest: dist + '/js'
     },
     html: {
-        src: src + '/htdocs/*.html',
-        dest: dist + '/htdocs',
+        src: src + '/*.html',
+        dest: dist + '/',
         vendorsSrc: src + '/js/venders/**',
         vendorsDest: dist + '/js/venders',
         fontsSrc: src + '/fonts/**',
@@ -58,8 +58,8 @@ module.exports = {
         woff: src + "/css/fonts/*.woff"
     },
     pug: {
-        src: src + "/htdocs/*.pug",
-        dist: src + "/htdocs"
+        src: src + "/*.pug",
+        dist: src + "/"
     },
     svg: {
         src: src + "/svg/*.svg",

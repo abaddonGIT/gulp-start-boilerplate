@@ -14,7 +14,7 @@
         browserSync({
             server: {
                 baseDir: "./src/",
-                index: "htdocs/index.html"
+                index: "index.html"
             },
             browser: ["chrome"]
         });
@@ -22,9 +22,9 @@
 
     gulp.task('watch', ['browser-sync'], function () {
         gulp.watch('src/css/*.less', ['less', browserSync.reload]);
-        gulp.watch('src/htdocs/*.pug', ['pug', browserSync.reload]);
+        gulp.watch('src/*.pug', ['pug', browserSync.reload]);
         gulp.watch(['src/js/**/**/*.js'], ['browserify', browserSync.reload]);
-        gulp.watch("src/htdocs/*.html").on("change", browserSync.reload);
+        gulp.watch("src/*.html").on("change", browserSync.reload);
     });
 
     gulp.task('production', ['less', 'pug', 'svg', 'sprites', 'imagemin', 'mincss', 'uglifyJs', 'html']);
