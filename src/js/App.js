@@ -3,12 +3,9 @@
  */
 /* global window, document, console */
 
-import {isMobile, onloadCSS, afterLoadCSS} from './UsesFunctions';
+import { isMobile } from './UsesFunctions';
 const SvgEvery = require('svg4everybody');
 const AOS = require('aos');
-const {
-  loadCSS,
-} = require('fg-loadcss');
 
 class App {
   constructor() {
@@ -19,21 +16,17 @@ class App {
     if (isMobile()) {
       this.body.addClass('is-mobile');
     }
-    const css = loadCSS('css/style.css');
-    onloadCSS(css, () => {
-      // Анимация для страницы
-      if (document.querySelector('.has-anim')) {
-        const AOS = require('aos');
-        AOS.init({
-          disable: 'mobile',
-          offset: 200,
-          duration: 600,
-          easing: 'ease-in-sine',
-          delay: 100,
-        });
-      }
-      afterLoadCSS();
-    });
+    // Анимация для страницы
+    if (document.querySelector('.has-anim')) {
+      const AOS = require('aos');
+      AOS.init({
+        disable: 'mobile',
+        offset: 200,
+        duration: 600,
+        easing: 'ease-in-sine',
+        delay: 100,
+      });
+    }
 
     SvgEvery();
   }
